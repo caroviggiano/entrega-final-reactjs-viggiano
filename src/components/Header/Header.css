@@ -1,0 +1,22 @@
+
+h1{
+    color: rgb(221, 226, 230);
+}
+
+h2{
+    color: rgb(214, 225, 234);
+}
+
+.Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(66, 104, 124);
+    width: 100%;
+    min-height: 10vh;
+    border: 2px solid rgb(1, 76, 126);
+}
+
+.logo{
+    width: 10%;
+}
