@@ -22,7 +22,7 @@ const CardUser = ({img,name,description,date}) =>  {
         <Typography variant="body2" color="text.secondary">
           {description}
         </Typography>
-        <Typography variant="" color="text.secondary">
+        <Typography variant="body3" color="text.secondary">
          {date}
         </Typography>
       </CardContent>
