@@ -3,9 +3,12 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import "./CardUser.css"
 
 const CardUser = ({img,name,description,date}) =>  {
   return (
+    <div className='Cards'> 
+    
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
@@ -25,6 +28,8 @@ const CardUser = ({img,name,description,date}) =>  {
       </CardContent>
      
     </Card>
+    </div>
+    
   );
 }
 
