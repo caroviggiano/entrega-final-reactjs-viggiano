@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Ramo de flores",
+    "date": "Especial por el día de la primavera!",
+    "description": "Incluye: 1 girasol, 3 tulipanes y 2 chocolates.",
+    "img": "/img/ramo-girasoles.jpg",
+    "category": "Decoración"
+  },
+  {
+    "id": 2,
+    "name": "Gorrito",
+    "date": "Ideal para el invierno!",
+    "description": "Pídalo en el color que desee",
+    "img": "/img/gorritos.jpg",
+    "category": "Accesorio"
+  },
+  {
+    "id": 3,
+    "name": "Mini Bag",
+    "date": "Arma tu look ideal!",
+    "description": "Pídalo en el color que desee.",
+    "img": "/img/mini-bags.jpg",
+    "category": "Accesorio"
+  }
+]

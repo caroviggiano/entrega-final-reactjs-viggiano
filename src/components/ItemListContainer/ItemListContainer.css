@@ -1,0 +1,11 @@
+.product-container {
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap;
+  }
+  
+  .product {
+    width: calc(33.33% - 10px);
+    margin: 5px; 
+  }
+  

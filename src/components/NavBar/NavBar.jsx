@@ -1,19 +1,32 @@
-import React from 'react'
+import { Link } from "react-router-dom";
 import "./NavBar.css"
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import CartWidget from "../CartWidget/CartWidget"
 
- const NavBar = () => {
+const NavBar = () => {
   return (
-    <nav> 
-    <ul>
-        <li>Home</li>
-        <li>Contacto</li>
-        <li>About</li>
-        <li> <CartWidget/> </li>
-    </ul>
-    </nav>
-  )
-}
+    <nav className="nav-container">
+      <ul className="nav-ul">
+        <Link className="li" to="/">
+          Home
+        </Link>
+        <Link className="li" to="/About">
+          About
+        </Link>
+        <Link className="li" to="/Contact">
+          Contact
+        </Link>
+        <Link className="li" to="/Category/Accesorio">
+       {/*  <CartWidget/> */}
+       Accesorio
+        </Link>
+        <Link className="li" to="/Category/Decoración">
+       {/*  <CartWidget/> */}
+       Decoración
+        </Link>
 
-export default NavBar
+      </ul>
+    </nav>
+  );
+};
+
+export default NavBar;

@@ -1,50 +1,38 @@
 import React, {useState} from "react"
 import './App.css'
-import Header from './components/Header/Header'
-import CardUser from "./components/CardUser/CardUser"
-import NavBar from "./components/NavBar/NavBar"
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// Components
+import Header from "./components/Header/Header";
+import NavBar from "./components/NavBar/NavBar";
+
+// Pages
+import HomePage from "./pages/HomePage/HomePage";
+import AboutPage from "./pages/AboutPage/AboutPage";
+import ContactPage from "./pages/ContactPage/ContactPage";
+import DetailPage from "./pages/DetailPage/DetailPage";
+import NotFound from "./pages/NotFound/NotFound"
+import CategoryPage from "./pages/CategoryPage/CategoryPage";
 
 const App = () => {
+  const [hasError, setHasError] = useState(true);
 
-  const [number, setNumber] = useState(1)
-  return(
-    <div>
-    <div>
-      <Header 
-            title="Alba Crochet" 
-            subtitle="Prendas tejidas a crochet, a mano y con amor" />
-    </div>
+  return (
+    <Router>
+      <div className="App">
+        <Header />
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<HomePage/>} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/detail/:id" element={<DetailPage />} />
+          {hasError ? <Route path="*" element={<NotFound />} /> : null}
+          {<Route path="/category/:categoryId" element={<CategoryPage />} />}
+        </Routes>
+      </div>
+    </Router>
+  );
+};
 
-    <NavBar/>
-    <ItemListContainer/>
-    <div className="UserSection">
-      <CardUser
-      name= "Ramo de flores"
-      date= "Especial por el dia de la primavera!"
-      description=" Incluye: 1 girasol, 3 tulipanes y 2 chocolates."
-      img= '/img/ramo-girasoles.jpg'
-      />
-       <CardUser
-      name= "Gorrito"
-      date= "Ideal para el invierno!"
-      description="Pedilo en el color que quieras"
-      img= "/img/gorritos.jpg"
-      />
-       <CardUser
-      name= "Mini Bag"
-      date= "Arma tu look ideal!"
-      description=" Pedilo en el color que quieras."
-      img= "/img/mini-bags.jpg"
-      />
-    </div>
-
-    <div className="CounterSection">
-      <p>{number}</p>
-    </div>
-
-    </div>
-  
-  )
-}
-export default App
+export default App;
