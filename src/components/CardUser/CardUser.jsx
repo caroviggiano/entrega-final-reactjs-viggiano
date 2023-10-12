@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-
+import "./CardUser.css"
 
 const CardUser = ({ item }) => {
   const { img, name, description, date } = item;
@@ -13,12 +13,14 @@ const CardUser = ({ item }) => {
         component="img"
         alt="Producto"
         image={img}
+        style={{ height: '350px', width: '100%' }}
+
       />
       <CardContent >
-        <Typography  gutterBottom variant="h5" component="div" >
+        <Typography  gutterBottom variant="h5" component="div">
           {name}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary" >
           {description}
         </Typography>
         <Typography variant="body2" color="text.secondary">

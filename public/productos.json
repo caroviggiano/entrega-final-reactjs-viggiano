@@ -11,7 +11,7 @@
     "id": 2,
     "name": "Gorrito",
     "date": "Ideal para el invierno!",
-    "description": "Pídalo en el color que desee",
+    "description": "Pedilo en el color que desees",
     "img": "/img/gorritos.jpg",
     "category": "Accesorio"
   },
@@ -19,8 +19,32 @@
     "id": 3,
     "name": "Mini Bag",
     "date": "Arma tu look ideal!",
-    "description": "Pídalo en el color que desee.",
+    "description": "Pedilo en el color que desees",
     "img": "/img/mini-bags.jpg",
     "category": "Accesorio"
+  },
+  {
+    "id": 4,
+    "name": "Mitones",
+    "date": "Ideales para el invierno!",
+    "description": "Pedilo en el color que desees",
+    "img": "/img/mitones.jpg",
+    "category": "Accesorio"
+  },
+  {
+    "id": 5,
+    "name": "Manguitas",
+    "date": "Dale un toque especial a tus looks!",
+    "description": "Pedilo en el color que desees",
+    "img": "/img/manguitas.jpg",
+    "category": "Ropa"
+  },
+  {
+    "id": 6,
+    "name": "Sweater",
+    "date": "Ideal para el invierno!",
+    "description": "En el color que vos elijas y a medida!",
+    "img": "/img/sweater.jpg",
+    "category": "Ropa"
   }
 ]

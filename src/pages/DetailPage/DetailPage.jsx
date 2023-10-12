@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CardUser from "../../components/CardUser/CardUser";
 import { useParams } from 'react-router-dom';
+import "./DetailPage.css"
 
 const DetailPage = () => {
   let { id } = useParams();
