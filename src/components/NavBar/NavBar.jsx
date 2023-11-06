@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { Menu, MenuItem } from "@mui/material";
+import { Menu, MenuProducto } from "@mui/material";
 import { useState } from "react";
 import "./NavBar.css";
-/* import CartWidget from "../CartWidget/CartWidget"; */
 
 const NavBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -35,15 +34,15 @@ const NavBar = () => {
           open={Boolean(anchorEl)}
           onClose={handleMenuClose}
         >
-          <MenuItem onClick={handleMenuClose}>
+          <MenuProducto onClick={handleMenuClose}>
             <Link to="/Category/Ropa">Ropa</Link>
-          </MenuItem>
-          <MenuItem onClick={handleMenuClose}>
+          </MenuProducto>
+          <MenuProducto onClick={handleMenuClose}>
             <Link to="/Category/Accesorio">Accesorios</Link>
-          </MenuItem>
-          <MenuItem onClick={handleMenuClose}>
+          </MenuProducto>
+          <MenuProducto onClick={handleMenuClose}>
             <Link to="/Category/Decoración">Decoración</Link>
-          </MenuItem>
+          </MenuProducto>
         </Menu>
       </ul>
     </nav>

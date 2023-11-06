@@ -1,38 +1,45 @@
-import React, {useState} from "react"
-import './App.css'
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { db } from "./Firebase/firebaseConfig";
+import { collection, query, getDocs } from "firebase/firestore";
+import { CartProvider } from "./context/CartContext";
 
-// Components
-import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
+import Carrito from "./components/Carrito/Carrito";
+import Checkout from "./components/Checkout/CheckOut";
+import ProductoDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import ProductoListContainer from "./components/ItemListContainer/ItemListContainer";
 
-// Pages
-import HomePage from "./pages/HomePage/HomePage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import DetailPage from "./pages/DetailPage/DetailPage";
-import NotFound from "./pages/NotFound/NotFound"
-import CategoryPage from "./pages/CategoryPage/CategoryPage";
 
-const App = () => {
-  const [hasError, setHasError] = useState(true);
+
+function App() {
 
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<HomePage/>} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/detail/:id" element={<DetailPage />} />
-          {hasError ? <Route path="*" element={<NotFound />} /> : null}
-          {<Route path="/category/:categoryId" element={<CategoryPage />} />}
-        </Routes>
-      </div>
-    </Router>
+    <div>
+ <CartProvider> 
+ <BrowserRouter> 
+
+        <Navbar/>
+          <Routes>
+            <Route path="/" element={<ProductoListContainer />} />
+            <Route path="/Producto/:id" element={<ProductoDetailContainer />}/>
+            <Route path="/productos" element={<ProductoListContainer />} />
+            <Route path="/productos/:category" element={<ProductoListContainer />} />
+            <Route path="/about" element={<AboutPage />} />
+           <Route path="/contact" element={<ContactPage />} />
+            <Route path="/detail/:id" element={<DetailPage />} />
+            <Route path="/carrito" element={<Carrito />}/>
+            <Route path="/checkout" element={<Checkout />}/>
+          </Routes>
+
+          </BrowserRouter>
+          </CartProvider>
+
+    </div>
   );
-};
+}
 
 export default App;

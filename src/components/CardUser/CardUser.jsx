@@ -5,26 +5,25 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import "./CardUser.css"
 
-const CardUser = ({ item }) => {
-  const { img, name, description, date } = item;
+const CardUser = ({ producto }) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         alt="Producto"
-        image={img}
+        image={producto.img}
         style={{ height: '350px', width: '100%' }}
 
       />
       <CardContent >
         <Typography  gutterBottom variant="h5" component="div">
-          {name}
+          {producto.name}
         </Typography>
         <Typography variant="body2" color="text.secondary" >
-          {description}
+          {producto.description}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {date}
+          {producto.date}
         </Typography>
       </CardContent>
     </Card>

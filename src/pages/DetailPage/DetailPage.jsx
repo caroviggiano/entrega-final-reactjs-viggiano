@@ -6,18 +6,18 @@ import "./DetailPage.css"
 
 const DetailPage = () => {
   let { id } = useParams();
-  const [item, setItem] = useState(null);
+  const [Producto, setProducto] = useState(null);
 
   useEffect(() => {
     axios.get('/productos.json').then((res) => {
-      const product = res.data.find(item => item.id === parseInt(id));
-      setItem(product);
+      const product = res.data.find(Producto => Producto.id === parseInt(id));
+      setProducto(product);
     });
   }, [id]);
 
   return (
     <div className='Detail-products'>
-      {item ? <CardUser item={item} /> : null}
+      {Producto ? <CardUser Producto={Producto} /> : null}
     </div>
   );
 };

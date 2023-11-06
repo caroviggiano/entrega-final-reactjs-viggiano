@@ -5,26 +5,26 @@ import { useParams } from 'react-router-dom';
 import "./CategoryPage.css"
 
 const CategoryPage = () => {
-  const [items, setItems] = useState([]);
+  const [Productos, setProductos] = useState([]);
   let { categoryId } = useParams();
 
 
   useEffect(() => {
     axios.get('/productos.json').then((res) => {
-      setItems(res.data);
+      setProductos(res.data);
     });
   }, [] );
 
-  let filteredItems = items.filter((item) => {
-    return item.category === categoryId
+  let filteredProductos = Productos.filter((Producto) => {
+    return Producto.category === categoryId
   })
 
   return(
     <div className='Cards-List'>
-        {filteredItems.map((item)=>{
+        {filteredProductos.map((Producto)=>{
           return (
-            <div style={{margin: 10 }} key= {item.id}>
-                <CardUser item={item} /> 
+            <div style={{margin: 10 }} key= {Producto.id}>
+                <CardUser Producto={Producto} /> 
             </div>
           )
         } )}
