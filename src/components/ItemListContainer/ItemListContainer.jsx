@@ -1,15 +1,12 @@
 import { useEffect, useState } from "react";
 import ProductoList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
-import { collection, getDocs, query, where } from "../../Firebase/firebaseConfig";
+import { collection, getDocs, query, where } from "firebase/firestore"; // Updated import path
 import { db } from "../../Firebase/firebaseConfig";
 
 const ProductoListContainer = () => {
-
     const [productos, setProductos] = useState([]);
-
     const [titulo, setTitulo] = useState("Productos");
-
     const category = useParams().category;
 
     useEffect(() => {
@@ -20,16 +17,17 @@ const ProductoListContainer = () => {
             .then((resp) => {
                 setProductos(
                     resp.docs.map((doc) => {
-                        return { ...doc.data(), id: doc.id}
-          }))
-        })
-    }, [category])
+                        return { ...doc.data(), id: doc.id };
+                    })
+                );
+            });
+    }, [category]);
 
+    return (
+        <div>
+            <ProductoList productos={productos} titulo={titulo} /> 
+        </div>
+    );
+};
 
-  return (
-    <div>
-        <ProductoList productos={productos} name={name} />
-    </div>
-  )
-}
-export default ProductoListContainer
+export default ProductoListContainer;

@@ -1,25 +1,25 @@
-nav {
+.navbar {
     width: 100%;
     background-color: rgb(13, 7, 50);
     min-height: 5vh;
 }
 
-ul {
+.menu {
     display: flex;
     justify-content: space-around;
-    align-Productos: center;
+    align-items: center;
     width: 100%;
-    padding: 0; 
+    padding: 0;
 }
 
-.li {
+.menu-link {
     text-decoration: none;
     color: rgb(255, 255, 255);
     font-size: 18px;
     list-style-type: none;
-    transition: color 0.3s; 
+    transition: color 0.3s;
 }
 
-.li:hover {
-    color: rgb(181, 181, 221); 
+.menu-link:hover {
+    color: rgb(181, 181, 221);
 }

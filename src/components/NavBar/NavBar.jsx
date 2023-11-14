@@ -1,52 +1,67 @@
-import { Link } from "react-router-dom";
-import { Menu, MenuProducto } from "@mui/material";
-import { useState } from "react";
-import "./NavBar.css";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu, MenuItem, Button } from '@mui/material';
+import "./Navbar.css";
 
-const NavBar = () => {
+
+const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const handleMenuClick = (event) => {
+  const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleMenuClose = () => {
+  const handleClose = () => {
     setAnchorEl(null);
   };
 
   return (
-    <nav className="nav-container">
-      <ul className="nav-ul">
-        <Link className="li" to="/">
-          Home
-        </Link>
-        <Link className="li" to="/About">
-          About
-        </Link>
-        <Link className="li" to="/Contact">
-          Contacto
-        </Link>
-        <div className="li" onClick={handleMenuClick}>
-          Categorías
-        </div>
-        <Menu
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl)}
-          onClose={handleMenuClose}
-        >
-          <MenuProducto onClick={handleMenuClose}>
-            <Link to="/Category/Ropa">Ropa</Link>
-          </MenuProducto>
-          <MenuProducto onClick={handleMenuClose}>
-            <Link to="/Category/Accesorio">Accesorios</Link>
-          </MenuProducto>
-          <MenuProducto onClick={handleMenuClose}>
-            <Link to="/Category/Decoración">Decoración</Link>
-          </MenuProducto>
-        </Menu>
-      </ul>
-    </nav>
+    <nav className="navbar">
+    <Link to="/" className="logo">
+        <h1>Alba Crochet</h1>
+    </Link>
+    <ul className="menu">
+        <li>
+            <Link className="menu-link" to="/">
+                Home
+            </Link>
+        </li>
+        <li>
+            <Link className="menu-link" to="/About">
+                About
+            </Link>
+        </li>
+        <li>
+            <Link className="menu-link" to="/Contact">
+                Contacto
+            </Link>
+        </li>
+        <li>
+            <Button className="menu-link" onClick={handleClick}>
+                Productos
+            </Button>
+            <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
+                <MenuItem>
+                    <Link to="/Category/Ropa" className="submenu-link">
+                        Ropa
+                    </Link>
+                </MenuItem>
+                <MenuItem>
+                    <Link to="/Category/Accesorio" className="submenu-link">
+                        Accesorios
+                    </Link>
+                </MenuItem>
+                <MenuItem>
+                    <Link to="/Category/Decoración" className="submenu-link">
+                        Decoración
+                    </Link>
+                </MenuItem>
+            </Menu>
+        </li>
+    </ul>
+</nav>
+
   );
 };
 
-export default NavBar;
+export default Navbar;
