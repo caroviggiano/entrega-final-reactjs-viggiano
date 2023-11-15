@@ -1,21 +1,21 @@
-h1{
+h1 {
     color: rgb(221, 226, 230);
 }
 
-h2{
+h2 {
     color: rgb(214, 225, 234);
 }
 
-.Header{
+.Header {
     display: flex;
     justify-content: space-between;
-    align-Productos: center;
+    align-items: center; 
     background-color: rgb(66, 104, 124);
     width: 100%;
     min-height: 8vh;
     border: 2px solid rgb(1, 76, 126);
 }
 
-.logo{
-    width: 12vh;
+.Header img {
+    width: 80px; 
 }
