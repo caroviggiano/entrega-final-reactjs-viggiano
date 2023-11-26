@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, MenuItem, Button } from '@mui/material';
+import CartWidget from '../../components/CartWidget/CartWidget';
 import "./Navbar.css";
 
 
@@ -27,19 +28,24 @@ const Navbar = () => {
             </Link>
         </li>
         <li>
-            <Link className="menu-link" to="/About">
-                About
+            <Link className="menu-link" to="/about">
+                Nosotros
             </Link>
         </li>
         <li>
-            <Link className="menu-link" to="/Contact">
+            <Link className="menu-link" to="/contact">
                 Contacto
             </Link>
         </li>
         <li>
-            <Button className="menu-link" onClick={handleClick}>
+            
+            <CartWidget />
+           
+        </li>
+        <li>
+            <Link className="menu-link" onClick={handleClick}>
                 Productos
-            </Button>
+            </Link>
             <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
                 <MenuItem>
                     <Link to="/Category/Ropa" className="submenu-link">

@@ -1,5 +1,5 @@
 import React from "react";
-import ProductoListContainer from "../../components/ProductoListContainer/ProductoListContainer";
+import ProductoListContainer from "../../components/ItemListContainer/ItemListContainer";
 
 const HomePage = () => {
   return (

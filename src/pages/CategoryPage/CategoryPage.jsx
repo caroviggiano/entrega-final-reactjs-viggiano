@@ -1,35 +1,44 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import CardUser from "../../components/CardUser/CardUser";
+import CardUser from '../../components/CardUser/CardUser';
 import { useParams } from 'react-router-dom';
-import "./CategoryPage.css"
+import './CategoryPage.css';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 const CategoryPage = () => {
-  const [Productos, setProductos] = useState([]);
-  let { categoryId } = useParams();
-
+  const [productos, setProductos] = useState([]);
+  const { categoryId } = useParams();
 
   useEffect(() => {
-    axios.get('/productos.json').then((res) => {
-      setProductos(res.data);
-    });
-  }, [] );
+    const db = firebase.firestore();
 
-  let filteredProductos = Productos.filter((Producto) => {
-    return Producto.category === categoryId
-  })
+    const fetchData = async () => {
+      try {
+        const querySnapshot = await db.collection('productos').where('category', '==', categoryId).get();
 
-  return(
-    <div className='Cards-List'>
-        {filteredProductos.map((Producto)=>{
-          return (
-            <div style={{margin: 10 }} key= {Producto.id}>
-                <CardUser Producto={Producto} /> 
-            </div>
-          )
-        } )}
+        const data = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+
+        setProductos(data);
+      } catch (error) {
+        console.error('Error fetching data from Firestore:', error);
+      }
+    };
+
+    fetchData();
+  }, [categoryId]);
+
+  return (
+    <div className="Cards-List">
+      {productos.map((producto) => (
+        <div style={{ margin: 10 }} key={producto.id}>
+          <CardUser producto={producto} />
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default CategoryPage
+export default CategoryPage;

@@ -2,42 +2,54 @@ import { toCapital } from "../../helpers/toCapital";
 import ProductoCount from "../ItemCount/ItemCount";
 import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
+import Swal from "sweetalert2"; 
 
+const ProductoDetail = ({ Producto }) => {
+  const { carrito, agregarAlCarrito } = useContext(CartContext);
+  const [cantidad, setCantidad] = useState(1);
 
+  const handleRestar = () => {
+    setCantidad((prevCantidad) => Math.max(1, prevCantidad - 1));
+  };
 
-const ProductoDetail = ( {Producto} ) => {
+  const handleSumar = () => {
+    setCantidad((prevCantidad) => {
+      const newCantidad = prevCantidad + 1;
+      return Producto.stock ? Math.min(Producto.stock, newCantidad) : newCantidad;
+    });
+  };
 
-    const { carrito, agregarAlCarrito } = useContext(CartContext);
-    console.log(carrito);
+  const handleAgregarAlCarrito = () => {
+    agregarAlCarrito(Producto, cantidad);
 
-    const [cantidad, setCantidad] = useState(1);
-
-    const handleRestar = () => {
-        cantidad > 1 && setCantidad(cantidad - 1)
-    }
-
-    const handleSumar = () => {
-        cantidad < Producto.stock && setCantidad(cantidad + 1)
-    }
+    Swal.fire({
+      icon: "success",
+      title: "Producto agregado al carrito",
+      showConfirmButton: false,
+      timer: 1500, 
+    });
+  };
 
   return (
     <div className="container">
-        <div className="producto-detalle">
-            <img src={Producto.imagen} alt={Producto.titulo} />
-            <div>
-                <h3 className="titulo">{Producto.titulo}</h3>
-                <p className="descripcion">{Producto.descripcion}</p>
-                <p className="categoria">Categoría: {toCapital(Producto.categoria)}</p>
-                <p className="precio">${Producto.precio}</p>
-                <ProductoCount
-                  cantidad={cantidad}
-                  handleSumar={handleSumar}
-                  handleRestar={handleRestar}
-                  handleAgregar={() => { agregarAlCarrito(Producto, cantidad) }}
-                />
-            </div>
+      <div className="producto-detalle">
+        <img src={Producto.img} alt={Producto.name} />
+        <div>
+          <h3 className="name">{Producto.name}</h3>
+          <p className="descripcion">{Producto.description}</p>
+          <p className="categoria">Categoría: {toCapital(Producto.category)}</p>
+          <p className="precio">${Producto.precio}</p>
+          <ProductoCount
+            cantidad={cantidad}
+            handleSumar={handleSumar}
+            handleRestar={handleRestar}
+            handleAgregar={handleAgregarAlCarrito}
+          />
         </div>
+      </div>
     </div>
-  )
-}
-export default ProductoDetail
+  );
+};
+
+export default ProductoDetail;
+

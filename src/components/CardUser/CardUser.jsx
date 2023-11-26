@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -7,23 +8,25 @@ import "./CardUser.css"
 
 const CardUser = ({ producto }) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card className="custom-card">
       <CardMedia
         component="img"
         alt="Producto"
         image={producto.img}
-        style={{ height: '350px', width: '100%' }}
-
+        className="card-image"
       />
-      <CardContent >
-        <Typography  gutterBottom variant="h5" component="div">
+      <CardContent className="card-content">
+        <Typography gutterBottom variant="h5" component="div">
           {producto.name}
         </Typography>
-        <Typography variant="body2" color="text.secondary" >
+        <Typography variant="body2" color="text.secondary">
           {producto.description}
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {producto.date}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {producto.precio}
         </Typography>
       </CardContent>
     </Card>

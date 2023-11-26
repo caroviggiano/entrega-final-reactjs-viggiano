@@ -1,0 +1,15 @@
+.custom-card {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  height: 150px;
+  width: 100%;
+  object-fit: cover; 
+}
+
+.card-content {
+  flex: 1;
+}
