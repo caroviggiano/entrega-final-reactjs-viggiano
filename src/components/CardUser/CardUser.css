@@ -1,15 +1,21 @@
 .custom-card {
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-}
-
-.card-image {
-  height: 150px;
-  width: 100%;
-  object-fit: cover; 
-}
-
-.card-content {
-  flex: 1;
-}
+    width: 250px;
+    margin: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .custom-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-image {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    text-align: center;
+  }
+  
+  

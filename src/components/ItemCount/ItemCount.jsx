@@ -1,4 +1,5 @@
 import React from 'react';
+import './ItemCount.css';
 
 const ProductoCount = ({ cantidad, handleRestar, handleSumar, handleAgregar }) => {
   return (

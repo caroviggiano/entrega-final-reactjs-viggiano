@@ -1,13 +1,6 @@
 .product-container {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  margin: 20px;
+  justify-content: space-around;
+  padding: 20px;
 }
-
-.product {
-  width: calc(33.33% - 10px);
-  margin: 5px;
-  background-color: #ddd; 
-}
-

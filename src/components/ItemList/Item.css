@@ -1,0 +1,43 @@
+.producto {
+    width: 250px;
+    margin: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .producto:hover {
+    transform: scale(1.05);
+  }
+  
+  .producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .producto div {
+    padding: 10px;
+  }
+  
+  .producto h4 {
+    margin-bottom: 10px;
+  }
+  
+  .producto p {
+    margin: 5px 0;
+  }
+  
+  .ver-mas {
+    display: inline-block;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .ver-mas:hover {
+    background-color: #0056b3;
+  }
+  

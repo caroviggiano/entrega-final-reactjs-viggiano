@@ -1,10 +1,11 @@
 import React from "react";
 import Producto from "./Item";
 import { toCapital } from "../../helpers/toCapital";
+import "./ItemList.css"; 
 
 const ProductoList = ({ productos, name }) => {
   return (
-    <div className="container">
+    <div className="producto-list-container">
       <h2 className="main-title">{toCapital(name)}</h2>
 
       <div className="productos">

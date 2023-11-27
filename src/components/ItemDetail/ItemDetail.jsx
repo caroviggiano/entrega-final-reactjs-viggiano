@@ -3,6 +3,7 @@ import ProductoCount from "../ItemCount/ItemCount";
 import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import Swal from "sweetalert2"; 
+import './ItemDetail.css';
 
 const ProductoDetail = ({ Producto }) => {
   const { carrito, agregarAlCarrito } = useContext(CartContext);

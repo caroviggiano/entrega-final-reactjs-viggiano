@@ -1,11 +1,19 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 
 const ContactPage = () => {
     const { register, handleSubmit } = useForm();
 
     const enviar = (data) => {
+
         console.log(data);
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Formulario enviado con éxito',
+            text: 'Gracias por contactarnos. Nos pondremos en contacto contigo pronto.',
+        });
     };
 
     return (

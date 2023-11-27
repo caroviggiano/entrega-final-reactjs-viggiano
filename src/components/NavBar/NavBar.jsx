@@ -47,21 +47,21 @@ const Navbar = () => {
                 Productos
             </Link>
             <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
-                <MenuItem>
-                    <Link to="/Category/Ropa" className="submenu-link">
-                        Ropa
-                    </Link>
-                </MenuItem>
-                <MenuItem>
-                    <Link to="/Category/Accesorio" className="submenu-link">
-                        Accesorios
-                    </Link>
-                </MenuItem>
-                <MenuItem>
-                    <Link to="/Category/Decoración" className="submenu-link">
-                        Decoración
-                    </Link>
-                </MenuItem>
+            <MenuItem>
+              <Link to={`/Category/Ropa`} className="submenu-link">
+                Ropa
+              </Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to={`/Category/Accesorio`} className="submenu-link">
+                Accesorios
+              </Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to={`/Category/Decoración`} className="submenu-link">
+                Decoración
+              </Link>
+            </MenuItem>
             </Menu>
         </li>
     </ul>
