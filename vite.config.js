@@ -5,8 +5,12 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   base: "/pre-entrega-1-react/",
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      external: ['firebase/firestore'], 
+    },
+  },
   optimizeDeps: {
     include: ['react-router-dom'],
-    
   },
 });
