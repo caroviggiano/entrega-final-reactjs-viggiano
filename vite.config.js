@@ -6,6 +6,7 @@ export default defineConfig({
   base: "/pre-entrega-1-react/",
   plugins: [react()],
   optimizeDeps: {
-    include: ['react-router-dom'],
+    include: [/\.jsx?$/, /\.tsx?$/, /\.vue$/, /\.md$/ ,'react-router-dom'],
+    
   },
 });
