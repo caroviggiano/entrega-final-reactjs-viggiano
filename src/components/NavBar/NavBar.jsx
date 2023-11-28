@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, MenuItem, Button } from '@mui/material';
 import CartWidget from '../../components/CartWidget/CartWidget';
-import "./Navbar.css";
+import "./NavBar.css";
 
 
 const Navbar = () => {
