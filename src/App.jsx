@@ -4,7 +4,7 @@ import { CartProvider } from "./context/CartContext";
 import NavBar from "./components/NavBar/NavBar";
 import Carrito from "./components/Carrito/Carrito";
 import Footer from "./components/Footer/Footer";
-import Checkout from "./components/Checkout/CheckOut";
+import Checkout from "./components/CheckOut/CheckOut";
 import ProductoDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import ProductoListContainer from "./components/ItemListContainer/ItemListContainer";
 import HomePage from "./pages/HomePage/HomePage";
